@@ -9,7 +9,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="<c:url value="/admin/index" />">DashBoard Host</a>
+        <a class="navbar-brand" href="<c:url value='/admin/index' />">DashBoard Host</a>
     </div>
     <!-- /.navbar-header -->
 
@@ -214,7 +214,7 @@
                 <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configurações </a>
                 </li>
                 <li class="divider"></li>
-                <li><a href="<c:url value="/login/efetuarlogout" />"><i class="fa fa-sign-out fa-fw"></i> Sair </a>
+                <li><a href="<c:url value='/login/logout' />"><i class="fa fa-sign-out fa-fw"></i> Sair </a>
                 </li>
             </ul>
             <!-- /.dropdown-user -->

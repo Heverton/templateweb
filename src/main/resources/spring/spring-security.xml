@@ -15,7 +15,6 @@
         <intercept-url pattern="/login/**"   access="ROLE_ANONYMOUS, ROLE_USER" />
         
         <intercept-url pattern="/admin/**"   access="ROLE_USER" />
-        <intercept-url pattern="/cliente/**"   access="ROLE_USER" />
         
         <!-- access denied page 
         <access-denied-handler error-page="/erro/403" />
@@ -23,12 +22,12 @@
         <form-login 
             login-page="/login" 
             login-processing-url="/login/efetuarlogin"
-            authentication-failure-url="/login/efetuarlogin?error" 
-            default-target-url="/admin/index"
+            authentication-failure-url="/login/loginError" 
+            default-target-url="/login/bemvindo"
             username-parameter="username"
             password-parameter="password" />
         
-        <logout logout-url="/login/efetuarlogout" logout-success-url="/login" />
+        <logout logout-url="/login/logout" logout-success-url="/login" />
         
         <!-- Pode haver 2 sessions simuntaneamente -->
         <!-- Habiliar proteção contra ataques fixação de sessão(Já vem habilidado 
