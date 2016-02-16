@@ -8,7 +8,6 @@
 
         <h2>${title}</h2>
         <h2>${message}</h2>
-        <h2>${pagina}</h2>
         
         <c:forEach items="${paginas}" var="pags">
             <h2><spring:message code="label.id"/> = <c:out value="${pags.id}"/></h2>

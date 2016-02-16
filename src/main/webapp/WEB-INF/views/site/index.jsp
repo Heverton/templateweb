@@ -17,7 +17,7 @@
         <a href="<c:url value="/site/paggaleria"/>">Galeria!</a> 
         <br>
         <br>
-        <a href="<c:url value="/login/index"/>">Login!</a> 
+        <a href="<c:url value="/login/"/>">Login!</a> 
 
     </jsp:body>
 </template:template>

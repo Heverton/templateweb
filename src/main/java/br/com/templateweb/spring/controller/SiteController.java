@@ -40,6 +40,7 @@ public class SiteController {
         paginas.add(new Pagina("PAGINA DE INSTITUCIONAL"));
         paginas.add(new Pagina("PAGINA DE GALERIA"));
         
+        //CARGA INICIAL DE DADOS COM PAGINAS
         for (Pagina pagina : paginas) {
             if (paginaService.salvarOuAtualizar(pagina)) {
                 model.addObject("title", "Pagina Index");
@@ -54,20 +55,22 @@ public class SiteController {
     }
 
     @RequestMapping(value = {"/paginstitucional"}, method = RequestMethod.GET)
-    public ModelAndView institucional(Model model) {
+    public String institucional(Model model) {
         model.addAttribute("title", "Pagina Institucional");
         model.addAttribute("message", "Bem-vindo");
         model.addAttribute(PAGINA_KEY, new Pagina());
-        model.addAttribute(PAGINAS_KEY, paginaService.recuperar(new Long(1)));
-        return new ModelAndView("site/institucional");
+        model.addAttribute(PAGINAS_KEY, paginaService.listar());
+        return "redirect:/site/institucional";
+        //return new ModelAndView("site/institucional");
     }
 
     @RequestMapping(value = {"/paggaleria"}, method = RequestMethod.GET)
-    public ModelAndView galeria(Model model) {
+    public String galeria(Model model) {
         model.addAttribute("title", "Pagina Galeria");
         model.addAttribute("message", "Bem-vindo");
         model.addAttribute(PAGINA_KEY, new Pagina());
-        model.addAttribute(PAGINAS_KEY, paginaService.recuperar(new Long(2)));        
-        return new ModelAndView("site/galeria");
+        model.addAttribute(PAGINAS_KEY, paginaService.listar());
+        return "redirect:/site/galeria";
+        //return new ModelAndView("site/galeria");
     }
 }
