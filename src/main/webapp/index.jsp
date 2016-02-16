@@ -5,9 +5,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>:: JPA CRUD ::</title>
+        <title>:: Direct Pag ::</title>
     </head>
     <body>
-        <jsp:forward page="/usuario/listar"/>
+        <jsp:forward page="/site/"/>
     </body>
 </html>

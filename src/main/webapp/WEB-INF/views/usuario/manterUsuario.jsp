@@ -30,18 +30,15 @@
                                 <td>
                                     <table style="width: 100%;" border="1">
                                         <tr>
-                                            <th><form:label path="nome"><spring:message
-                                                    code="label.nome"/></form:label></th>
+                                            <th><form:label path="nome"><spring:message code="label.nome"/></form:label></th>
                                             <td><form:input path="nome" maxlength="100"/></td>
                                         </tr>
                                         <tr>
-                                            <th><form:label path="idade"><spring:message
-                                                    code="label.idade"/></form:label></th>
+                                            <th><form:label path="idade"><spring:message code="label.idade"/></form:label></th>
                                             <td><form:input path="idade" maxlength="3"/></td>
                                         </tr>
                                         <tr>
-                                            <th><form:label path="email"><spring:message
-                                                    code="label.email"/></form:label></th>
+                                            <th><form:label path="email"><spring:message code="label.email"/></form:label></th>
                                             <td><form:input path="email" maxlength="50"/></td>
                                         </tr>
                                     </table>
@@ -57,8 +54,7 @@
                                         <input type="reset" value="<spring:message code="label.resetar"/>"/>
                                     </c:if>
                                     <span class="button">
-                                        <a href="<c:url value="/usuario/listar"/>"><spring:message
-                                                code="label.voltar"/></a>
+                                        <a href="<c:url value="/usuario/listar"/>"><spring:message code="label.voltar"/></a>
                                     </span>
                                 </td>
                             </tr>

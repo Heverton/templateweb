@@ -10,15 +10,12 @@
     <!-- Criar session: create-session="always"  -->
     <http auto-config="true" create-session="always" disable-url-rewriting="true"  >
         
-        <intercept-url pattern="/revenda/**" access="ROLE_ANONYMOUS" />
-        
+        <intercept-url pattern="/site/**" access="ROLE_ANONYMOUS" />        
         <intercept-url pattern="/usuario/**" access="ROLE_ANONYMOUS" />
         <intercept-url pattern="/login/**"   access="ROLE_ANONYMOUS, ROLE_USER" />
         
         <intercept-url pattern="/admin/**"   access="ROLE_USER" />
         <intercept-url pattern="/cliente/**"   access="ROLE_USER" />
-        <intercept-url pattern="/pagamento/**"   access="ROLE_USER" />
-        <intercept-url pattern="/licenca/**"   access="ROLE_USER" />
         
         <!-- access denied page 
         <access-denied-handler error-page="/erro/403" />

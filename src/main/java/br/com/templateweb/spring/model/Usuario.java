@@ -27,7 +27,7 @@ public class Usuario extends BaseEntity<Long> implements Versionable {
     private long version;
 
     @Id
-    @Column(name = "ID", unique = true)
+    @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
