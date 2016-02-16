@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" id="WebApp_ID"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+
+    <display-name>Java EE 7 WebApplication - Spring 4.x + JPA 2.1.x + HikariCP 2.x</display-name>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- SPRING FRAMEWORK -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <!-- Controlador de session para criar e destruir -->
+    <listener>
+        <listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
+    </listener>
+    
+    <!-- Tempo para expiração da session -->
+    <session-config>
+        <session-timeout>1</session-timeout>
+        <!-- sessions serão em cookie -->
+        <tracking-mode>COOKIE</tracking-mode>
+    </session-config>
+
+    <context-param>
+        <description>Root Application Context</description>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:spring/root-applicationContext.xml,
+                     classpath:spring/spring-security.xml</param-value>
+    </context-param>
+
+    <servlet>
+        <description>Spring MVC Servlet</description>
+        <servlet-name>Dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:spring/mvc-applicationContext.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+        
+    <!-- Spring Security -->
+    <filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+        
+    <!-- -->
+    <servlet-mapping>
+        <servlet-name>Dispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    
+</web-app>

@@ -1,0 +1,54 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans" 
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+        
+    
+    <!-- Criar session: create-session="always"  -->
+    <http auto-config="true" create-session="always" disable-url-rewriting="true"  >
+        
+        <intercept-url pattern="/revenda/**" access="ROLE_ANONYMOUS" />
+        
+        <intercept-url pattern="/usuario/**" access="ROLE_ANONYMOUS" />
+        <intercept-url pattern="/login/**"   access="ROLE_ANONYMOUS, ROLE_USER" />
+        
+        <intercept-url pattern="/admin/**"   access="ROLE_USER" />
+        <intercept-url pattern="/cliente/**"   access="ROLE_USER" />
+        <intercept-url pattern="/pagamento/**"   access="ROLE_USER" />
+        <intercept-url pattern="/licenca/**"   access="ROLE_USER" />
+        
+        <!-- access denied page 
+        <access-denied-handler error-page="/erro/403" />
+        -->
+        <form-login 
+            login-page="/login" 
+            login-processing-url="/login/efetuarlogin"
+            authentication-failure-url="/login/efetuarlogin?error" 
+            default-target-url="/admin/index"
+            username-parameter="username"
+            password-parameter="password" />
+        
+        <logout logout-url="/login/efetuarlogout" logout-success-url="/login" />
+        
+        <!-- Pode haver 2 sessions simuntaneamente -->
+        <!-- Habiliar proteção contra ataques fixação de sessão(Já vem habilidado 
+        por padrão): session-fixation-protection="migrateSession"-->
+        <session-management session-fixation-protection="migrateSession">
+            <!-- O usuario pode acessa com até 2 sessions -->
+            <concurrency-control max-sessions="2" />
+        </session-management>
+               
+    </http>
+
+    <authentication-manager>
+        <authentication-provider>
+            <user-service>
+                <user name="admin" password="123" authorities="ROLE_USER" />                
+            </user-service>
+        </authentication-provider>
+    </authentication-manager>
+
+</beans:beans>
