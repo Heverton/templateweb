@@ -31,9 +31,10 @@
         <description>Root Application Context</description>
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath:spring/root-applicationContext.xml,
-                     classpath:spring/spring-security.xml</param-value>
+            classpath:spring/spring-security.xml</param-value>
     </context-param>
 
+    <!-- Controlador de session para criar e destruir -->
     <servlet>
         <description>Spring MVC Servlet</description>
         <servlet-name>Dispatcher</servlet-name>
@@ -44,19 +45,34 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
-        
+    
     <!-- Spring Security -->
     <filter>
         <filter-name>springSecurityFilterChain</filter-name>
         <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
     </filter>
-
+    
+    <!-- Spring Security init -->
     <filter-mapping>
         <filter-name>springSecurityFilterChain</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-        
-    <!-- -->
+    
+    <servlet>
+        <servlet-name>Jersey Web Application</servlet-name>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>jersey.config.server.provider.packages</param-name>
+            <param-value>br.com.templateweb.rest</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Jersey Web Application</servlet-name>
+        <url-pattern>/webapi/*</url-pattern>
+    </servlet-mapping>
+    
+    <!-- init -->
     <servlet-mapping>
         <servlet-name>Dispatcher</servlet-name>
         <url-pattern>/</url-pattern>
