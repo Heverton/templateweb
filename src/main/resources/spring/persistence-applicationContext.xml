@@ -30,9 +30,9 @@
         <property name="dataSourceClassName" value="org.hsqldb.jdbc.JDBCDataSource"/>
         <property name="dataSourceProperties">
             <props>
-                <prop key="url">jdbc:hsqldb:mem:springcruddb;shutdown=true</prop>
+                <prop key="url">jdbc:hsqldb:file:C:/Temp/testdb;shutdown=true</prop>
                 <prop key="user">SA</prop>
-                <prop key="password">SA</prop>
+                <prop key="password"></prop>
             </props>
         </property>
     </bean>
