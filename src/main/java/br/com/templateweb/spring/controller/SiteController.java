@@ -33,6 +33,8 @@ public class SiteController {
     @RequestMapping(value = {"", "/"}, method = RequestMethod.GET)
     public ModelAndView index() {
 
+        paginaService.listar();
+        
         List<Pagina> paginas = new ArrayList<>();
         
         ModelAndView model = new ModelAndView("site/index", PAGINAS_KEY, paginas);

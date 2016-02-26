@@ -73,4 +73,5 @@
 
     <tx:annotation-driven transaction-manager="jpaTransactionManager"/>
 
+    
 </beans>
