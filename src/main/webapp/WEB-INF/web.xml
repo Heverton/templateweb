@@ -19,7 +19,7 @@
     <listener>
         <listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
     </listener>
-    
+
     <!-- Tempo para expiração da session -->
     <session-config>
         <session-timeout>1</session-timeout>
@@ -45,19 +45,19 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
-    
+
     <!-- Spring Security -->
     <filter>
         <filter-name>springSecurityFilterChain</filter-name>
         <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
     </filter>
-    
+
     <!-- Spring Security init -->
     <filter-mapping>
         <filter-name>springSecurityFilterChain</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-    
+
     <servlet>
         <servlet-name>Jersey Web Application</servlet-name>
         <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
@@ -71,11 +71,11 @@
         <servlet-name>Jersey Web Application</servlet-name>
         <url-pattern>/webapi/*</url-pattern>
     </servlet-mapping>
-    
+
     <!-- init -->
     <servlet-mapping>
         <servlet-name>Dispatcher</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-    
+
 </web-app>

@@ -1,1 +1,6 @@
 /templateweb/target/
+.idea/compiler.xml
+.idea/copyright/
+.idea/misc.xml
+.idea/workspace.xml
+target/

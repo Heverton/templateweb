@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.eclipse.persistence:org.eclipse.persistence.core:2.5.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Programa/java/repo/org/eclipse/persistence/org.eclipse.persistence.core/2.5.2/org.eclipse.persistence.core-2.5.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/Programa/java/repo/org/eclipse/persistence/org.eclipse.persistence.core/2.5.2/org.eclipse.persistence.core-2.5.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Programa/java/repo/org/eclipse/persistence/org.eclipse.persistence.core/2.5.2/org.eclipse.persistence.core-2.5.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
